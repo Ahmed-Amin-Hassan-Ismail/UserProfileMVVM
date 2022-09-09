@@ -7,9 +7,10 @@
 
 import Foundation
 
-class UsersViewModel {
+class UsersViewModel: BaseViewController {
     //MARK: - Variables
     private var usersList: [UsersList]?
+    private var userService = UserService()
     private var getUsersSuccessfully: ((Bool) -> Void)?
     
     //MARK: - Setter and Getter
@@ -21,9 +22,16 @@ class UsersViewModel {
         return  getUsersSuccessfully = action
     }
     
+    func navigateToUserDetailScreen(user: UsersList) {
+        
+    }
+    
     //MARK: - Helper Methods
     func getUsersFromServer() {
-        getUsersList()
+        userService.getUsersList { data in
+            self.usersList = data
+            self.getUsersSuccessfully?(true)
+        }
     }
     
     func getUsersCount() -> Int {
@@ -37,25 +45,7 @@ class UsersViewModel {
 //MARK: - APi Calling
 extension UsersViewModel {
     
-    private func getUsersList() {
-        guard let url = URL(string: "https://jsonplaceholder.typicode.com/users") else { return }
-        let task = URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
-            guard let self = self else { return }
-            guard let data = data, error == nil else {
-                return
-            }
-            
-            do {
-                let users = try JSONDecoder().decode([UsersList].self, from: data)
-                self.usersList = users
-                self.getUsersSuccessfully?(true)
-            } catch {
-                
-            }
 
-        }
-        task.resume()
-    }
 }
 
 

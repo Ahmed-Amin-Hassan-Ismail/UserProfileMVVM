@@ -18,6 +18,7 @@ class UsersViewController: UIViewController {
     //MARK: - ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.prefersLargeTitles = true
         setupTableView()
         setupUsersViewModel()
     }
@@ -42,7 +43,7 @@ extension UsersViewController {
         viewModel.getUserSuccessfullyState { _ in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
-            }            
+            }
         }
     }
 }
@@ -65,6 +66,10 @@ extension UsersViewController: UITableViewDataSource {
         }
         let user = viewModel.getUsersData()[indexPath.row]
         cell.configureCell(name: user.name ?? "", email: user.email ?? "", city: user.address?.city ?? "", street: user.address?.street ?? "")
+        cell.showDetailTapped = { [weak self] in
+            guard let self = self else { return }
+            self.viewModel.navigateToUserDetailScreen(user: user)
+        }
         return cell
     }
 }
