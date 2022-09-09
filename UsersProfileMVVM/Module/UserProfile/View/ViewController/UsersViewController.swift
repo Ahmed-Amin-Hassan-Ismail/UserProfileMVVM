@@ -40,10 +40,16 @@ extension UsersViewController {
 extension UsersViewController {
     private func setupUsersViewModel() {
         viewModel.getUsersFromServer()
+        
         viewModel.getUserSuccessfullyState { _ in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
+        }
+        viewModel.presentVC = { [weak self] vc in
+            guard let self = self else { return }
+            vc.modalPresentationStyle = .popover
+            self.present(vc, animated: true)
         }
     }
 }

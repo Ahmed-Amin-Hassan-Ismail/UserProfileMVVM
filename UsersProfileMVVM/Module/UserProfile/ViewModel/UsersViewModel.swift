@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class UsersViewModel: BaseViewController {
     //MARK: - Variables
@@ -23,7 +24,10 @@ class UsersViewModel: BaseViewController {
     }
     
     func navigateToUserDetailScreen(user: UsersList) {
-        
+        let storyboard = UIStoryboard(name: "UserDetail", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "UserDetailViewController") as? UserDetailViewController else { return }
+        vc.setUserData(data: user)
+        self.presentVC?(vc)
     }
     
     //MARK: - Helper Methods
@@ -41,12 +45,5 @@ class UsersViewModel: BaseViewController {
     
     
 }
-
-//MARK: - APi Calling
-extension UsersViewModel {
-    
-
-}
-
 
 

@@ -9,20 +9,32 @@ import Foundation
 
 
 struct UsersList: Codable {
+    var id: Int?
     var name: String?
+    var username: String?
     var email: String?
     var address: Address?
     
     enum CodingKeys: String, CodingKey {
-        case name, email, address
+        case id
+        case name
+        case username
+        case email
+        case address
     }
 }
 
 struct Address: Codable {
     var street: String?
+    var suite: String?
     var city: String?
+    var zipcode: String?
     
-    enum Codingkeys: String, CodingKey {
-        case street, city
+    enum CodingKeys: String, CodingKey {
+        case street
+        case suite
+        case city
+        case zipcode
     }
 }
+

@@ -13,6 +13,9 @@
 		AC1EF42628CBA10C007052D9 /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1EF42528CBA10C007052D9 /* UsersViewModel.swift */; };
 		AC1EF42928CBA7E7007052D9 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1EF42828CBA7E7007052D9 /* BaseViewController.swift */; };
 		AC1EF43128CBA88B007052D9 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1EF43028CBA88B007052D9 /* UserService.swift */; };
+		AC1EF43A28CBACB2007052D9 /* UserDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC1EF43928CBACB2007052D9 /* UserDetail.storyboard */; };
+		AC1EF43C28CBAD2D007052D9 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1EF43B28CBAD2D007052D9 /* UserDetailViewController.swift */; };
+		AC1EF43E28CBADBE007052D9 /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1EF43D28CBADBE007052D9 /* UserDetailViewModel.swift */; };
 		AC30148628CB954A009B4ED6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC30148528CB954A009B4ED6 /* AppDelegate.swift */; };
 		AC30148828CB954A009B4ED6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC30148728CB954A009B4ED6 /* SceneDelegate.swift */; };
 		AC30148A28CB954A009B4ED6 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC30148928CB954A009B4ED6 /* UsersViewController.swift */; };
@@ -28,6 +31,9 @@
 		AC1EF42528CBA10C007052D9 /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
 		AC1EF42828CBA7E7007052D9 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		AC1EF43028CBA88B007052D9 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		AC1EF43928CBACB2007052D9 /* UserDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserDetail.storyboard; sourceTree = "<group>"; };
+		AC1EF43B28CBAD2D007052D9 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		AC1EF43D28CBADBE007052D9 /* UserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
 		AC30148228CB954A009B4ED6 /* UsersProfileMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UsersProfileMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC30148528CB954A009B4ED6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC30148728CB954A009B4ED6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,7 +137,6 @@
 		AC1EF42B28CBA837007052D9 /* UserDetail */ = {
 			isa = PBXGroup;
 			children = (
-				AC1EF42E28CBA854007052D9 /* Model */,
 				AC1EF42D28CBA84D007052D9 /* ViewModel */,
 				AC1EF42C28CBA845007052D9 /* View */,
 			);
@@ -141,6 +146,8 @@
 		AC1EF42C28CBA845007052D9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AC1EF43328CBAAFA007052D9 /* ViewController */,
+				AC1EF43228CBAAF3007052D9 /* Storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -148,15 +155,9 @@
 		AC1EF42D28CBA84D007052D9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				AC1EF43D28CBADBE007052D9 /* UserDetailViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		AC1EF42E28CBA854007052D9 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		AC1EF42F28CBA875007052D9 /* Service */ = {
@@ -165,6 +166,22 @@
 				AC1EF43028CBA88B007052D9 /* UserService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		AC1EF43228CBAAF3007052D9 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				AC1EF43928CBACB2007052D9 /* UserDetail.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		AC1EF43328CBAAFA007052D9 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AC1EF43B28CBAD2D007052D9 /* UserDetailViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		AC30147928CB954A009B4ED6 = {
@@ -257,6 +274,7 @@
 			files = (
 				AC1EF42428CB97A0007052D9 /* UsersTableViewCell.xib in Resources */,
 				AC30149228CB954B009B4ED6 /* LaunchScreen.storyboard in Resources */,
+				AC1EF43A28CBACB2007052D9 /* UserDetail.storyboard in Resources */,
 				AC30148F28CB954B009B4ED6 /* Assets.xcassets in Resources */,
 				AC30148D28CB954A009B4ED6 /* Main.storyboard in Resources */,
 			);
@@ -274,9 +292,11 @@
 				AC30148A28CB954A009B4ED6 /* UsersViewController.swift in Sources */,
 				AC30148628CB954A009B4ED6 /* AppDelegate.swift in Sources */,
 				AC1EF43128CBA88B007052D9 /* UserService.swift in Sources */,
+				AC1EF43E28CBADBE007052D9 /* UserDetailViewModel.swift in Sources */,
 				AC30148828CB954A009B4ED6 /* SceneDelegate.swift in Sources */,
 				AC1EF42928CBA7E7007052D9 /* BaseViewController.swift in Sources */,
 				AC1EF42328CB97A0007052D9 /* UsersTableViewCell.swift in Sources */,
+				AC1EF43C28CBAD2D007052D9 /* UserDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
